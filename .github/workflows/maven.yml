@@ -27,6 +27,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+
+    - name: Check Maven version and PATH
+      run: |
+        echo "PATH: $PATH"
+        which mvn
+        mvn --version
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
